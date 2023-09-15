@@ -12,6 +12,9 @@
     "format": "prettier --write 'src/**/*.{ts,tsx,md,json,css}'"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vite-tsconfig-paths": "^4.2.1"
