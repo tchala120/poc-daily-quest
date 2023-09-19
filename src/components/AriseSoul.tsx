@@ -17,7 +17,7 @@ export const AriseSoul = ({ visible }: AriseSoulProps) => {
       animate={{
         y: ['-60%', '-55%', '-60%'],
         transition: {
-          repeat: visible ? Infinity : 0,
+          repeat: Infinity,
           duration: 2,
         },
       }}
