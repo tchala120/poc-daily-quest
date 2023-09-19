@@ -5,25 +5,45 @@ interface RewardTitleProps {
   amount: number
   tokenName?: string
   isSpecial?: boolean
+  isPresent?: boolean
 }
 
 export const RewardTitle = ({
   amount,
   tokenName = 'ASTR',
   isSpecial,
+  isPresent,
 }: RewardTitleProps) => {
   return (
-    <RewardTitleContainer isSpecial={isSpecial}>
-      +{amount} {tokenName}
-    </RewardTitleContainer>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <RewardTitleContainer isSpecial={isSpecial}>
+        +{amount} {tokenName}
+      </RewardTitleContainer>
+
+      {isPresent ? (
+        <span
+          style={{
+            fontSize: 14,
+            color: 'rgba(255, 255, 255, 0.5)',
+            marginTop: 4,
+          }}
+        >
+          Click to Collect
+        </span>
+      ) : null}
+    </div>
   )
 }
 
 const specialTextStyle = css`
   color: #fff;
-  text-shadow:
-    0px 5px 2px #4ac3fa,
-    0px 10px 2px #000;
 `
 
 const RewardTitleContainer = styled.div<Pick<RewardTitleProps, 'isSpecial'>>`
@@ -31,7 +51,7 @@ const RewardTitleContainer = styled.div<Pick<RewardTitleProps, 'isSpecial'>>`
   text-align: center;
   font-weight: 900;
   color: #fff;
-  margin-top: 12px;
+  margin-top: 6px;
   z-index: 999;
   font-size: 18px;
 
