@@ -12,7 +12,7 @@ export const AriseSoul = ({ visible }: AriseSoulProps) => {
       alt="arise-soul"
       visible={visible}
       initial={{
-        x: '-50%',
+        x: '-55%',
       }}
       animate={{
         y: ['-60%', '-55%', '-60%'],
@@ -34,9 +34,9 @@ export const AriseSoul = ({ visible }: AriseSoulProps) => {
 const AriseSoulImage = styled(motion.img)<Pick<AriseSoulProps, 'visible'>>`
   display: ${(props) => (props.visible ? 'block' : 'none')};
   position: absolute;
-  width: 100px;
+  width: 70px;
   height: auto;
   z-index: 999;
-  top: 50%;
+  top: 55%;
   left: 50%;
 `
