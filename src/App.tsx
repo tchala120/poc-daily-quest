@@ -1,9 +1,83 @@
+import styled from '@emotion/styled'
+
+import { DailyQuest, type QuestItem } from 'components/DailyQuest'
+
+const listQuests: QuestItem[] = [
+  {
+    id: 1,
+    dateIndex: 0,
+    reward: 1,
+    isCompleted: false,
+  },
+  {
+    id: 2,
+    dateIndex: 1,
+    reward: 1,
+    isCompleted: false,
+  },
+  {
+    id: 3,
+    dateIndex: 2,
+    reward: 1,
+    isCompleted: true,
+  },
+  {
+    id: 4,
+    dateIndex: 3,
+    reward: 1,
+    isCompleted: false,
+  },
+  {
+    id: 5,
+    dateIndex: 4,
+    reward: 1,
+    isCompleted: false,
+  },
+  {
+    id: 6,
+    dateIndex: 5,
+    reward: 1,
+    isCompleted: false,
+  },
+  {
+    id: 7,
+    dateIndex: 6,
+    reward: 10,
+    isCompleted: false,
+    isSpecial: true,
+  },
+]
+
 const App = () => {
   return (
-    <div>
-      <h1>This is App</h1>
-    </div>
+    <main>
+      <Container>
+        <h1
+          style={{
+            marginBottom: 24,
+          }}
+        >
+          Daily Quest PoC
+        </h1>
+
+        <QuestContainer>
+          <DailyQuest listQuests={listQuests} />
+        </QuestContainer>
+      </Container>
+    </main>
   )
 }
 
 export default App
+
+const Container = styled.div`
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+`
+
+const QuestContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+`
