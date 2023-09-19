@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
+import { Col, Row } from 'react-flexbox-grid'
 
 import { DailyQuest, type QuestItem } from 'components/DailyQuest'
+import { AsterQuest } from 'components/AsterQuest'
 
 const listQuests: QuestItem[] = [
   {
@@ -52,17 +54,33 @@ const App = () => {
   return (
     <main>
       <Container>
-        <h1
+        <Row
           style={{
-            marginBottom: 24,
+            alignItems: 'end',
           }}
         >
-          Daily Quest PoC
-        </h1>
+          <Col xs={9}>
+            <DailyQuest listQuests={listQuests} />
+          </Col>
 
-        <QuestContainer>
-          <DailyQuest listQuests={listQuests} />
-        </QuestContainer>
+          <Col xs={3}>
+            <img
+              src="/weekly-quest.svg"
+              alt="weekly-quest"
+              style={{
+                width: '100%',
+                height: '428px',
+                objectFit: 'cover',
+              }}
+            />
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={12}>
+            <AsterQuest />
+          </Col>
+        </Row>
       </Container>
     </main>
   )
@@ -72,12 +90,6 @@ export default App
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1500px;
   padding: 20px;
-`
-
-const QuestContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 16px;
 `
