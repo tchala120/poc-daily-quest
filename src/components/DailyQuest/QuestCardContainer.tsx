@@ -17,10 +17,6 @@ export const QuestCardContainer = styled.div<QuestCardContainerProps>`
   width: 100%;
   height: 200px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   cursor: ${(props) => (props.notAllowedToClick ? 'not-allowed' : 'pointer')};
   transition: all 0.25s;
