@@ -55,7 +55,9 @@ export const Quest = ({ quest, currentQuestDateIndex }: QuestProps) => {
         <MissingQuestOverlay visible={isMissing}>Missing</MissingQuestOverlay>
 
         <div className="quest-info">
-          {isMissing ? null : <RewardTitle amount={quest.reward} />}
+          {isMissing ? null : (
+            <RewardTitle amount={quest.reward} isSpecial={quest.isSpecial} />
+          )}
 
           <AnimatePresence>
             {isQuestAccomplished ? null : <AriseSoul visible={isPresent} />}
