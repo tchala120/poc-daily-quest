@@ -28,12 +28,12 @@ export const Flag = ({ isCompleted }: FlagProps) => {
 const FlagContainer = styled(motion.div)`
   position: absolute;
 
-  top: 50%;
+  top: 55%;
   left: 50%;
   z-index: 999;
 
   .flag {
-    width: 100px;
+    width: 70px;
     height: auto;
   }
 `
