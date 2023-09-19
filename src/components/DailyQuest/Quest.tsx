@@ -60,7 +60,9 @@ export const Quest = ({ quest, currentQuestDateIndex }: QuestProps) => {
           )}
 
           <AnimatePresence>
-            {isQuestAccomplished ? null : <AriseSoul visible={isPresent} />}
+            {isQuestAccomplished ? null : (
+              <AriseSoul key="arise-soul" visible={isPresent} />
+            )}
           </AnimatePresence>
 
           {isQuestAccomplished ? (
