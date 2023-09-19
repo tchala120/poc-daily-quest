@@ -23,4 +23,15 @@ export const QuestCardContainer = styled.div<QuestCardContainerProps>`
   border: ${(props) => (props.highlighted ? '2px solid #fff' : 'none')};
   border-radius: 10px;
   color: #fff;
+  box-shadow: ${(props) =>
+    props.isSpecial ? ' 0px 0px 10px #4ac3fa;' : 'none'};
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 `
