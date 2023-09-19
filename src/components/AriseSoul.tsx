@@ -11,18 +11,21 @@ export const AriseSoul = ({ visible }: AriseSoulProps) => {
       src="/arise-soul.svg"
       alt="arise-soul"
       visible={visible}
-      transition={{
-        repeat: Infinity,
-        duration: 2,
-      }}
       initial={{
         x: '-50%',
       }}
       animate={{
         y: ['-60%', '-55%', '-60%'],
+        transition: {
+          repeat: Infinity,
+          duration: 2,
+        },
       }}
       exit={{
         y: -1000,
+        transition: {
+          duration: 2,
+        },
       }}
     />
   )

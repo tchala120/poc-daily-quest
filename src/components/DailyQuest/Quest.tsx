@@ -29,6 +29,8 @@ export const Quest = ({ quest, currentQuestDateIndex }: QuestProps) => {
     quest.isCompleted
   )
 
+  const totalStar = quest.isSpecial ? 10 : 3
+
   const { isPresent, isFuture, isMissing } = useDailyQuestStatus({
     quest,
     currentQuestDateIndex,
@@ -46,17 +48,21 @@ export const Quest = ({ quest, currentQuestDateIndex }: QuestProps) => {
           }
         }}
       >
-        {Array.from({ length: 3 }).map((_, index) => (
+        {Array.from({ length: totalStar }).map((_, index) => (
           <Star key={index} />
         ))}
 
         <MissingQuestOverlay visible={isMissing}>Missing</MissingQuestOverlay>
 
         <div className="quest-info">
-          <RewardTitle amount={quest.reward} />
+          {isMissing ? null : (
+            <RewardTitle amount={quest.reward} isSpecial={quest.isSpecial} />
+          )}
 
           <AnimatePresence>
-            {isQuestAccomplished ? null : <AriseSoul visible={isPresent} />}
+            {isQuestAccomplished ? null : (
+              <AriseSoul key="arise-soul" visible={isPresent} />
+            )}
           </AnimatePresence>
 
           {isQuestAccomplished ? (
